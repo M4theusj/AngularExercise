@@ -1,22 +1,19 @@
 import { Component, Input } from '@angular/core';
-export const random = Math.floor(Math.random() * 2);
 
 @Component({
   selector: 'app-imagem',
-  imports: [],
   templateUrl: './imagem.component.html',
-  styleUrl: './imagem.component.css'
+  styleUrls: ['./imagem.component.css']
 })
 export class ImagemComponent {
   imagens = [
-    'biscoito-aberto.png',
-    'biscoito.png'
-  ]
+    'assets/biscoito-aberto.png',
+    'assets/biscoito.png'
+  ];
 
-  @Input()foto : boolean = true;
+  @Input() foto: number = 1; 
 
-  biscoito(){
-    this.foto = !this.foto;
+  biscoito() {
+    this.foto = this.foto === 1 ? 0 : 1;
   }
 }
-// Matheus Jacob Duarte e Vitor da Luz
