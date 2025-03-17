@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 export const random = Math.floor(Math.random() * 2);
 
 @Component({
@@ -13,6 +13,10 @@ export class ImagemComponent {
     'biscoito.png'
   ]
 
-  foto = this.imagens[random];
+  @Input()foto : boolean = true;
+
+  biscoito(){
+    this.foto = !this.foto;
+  }
 }
 // Matheus Jacob Duarte e Vitor da Luz

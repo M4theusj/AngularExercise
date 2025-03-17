@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { random } from '../imagem/imagem.component';
 
 @Component({
@@ -23,5 +23,11 @@ export class FrasesComponent {
 
   random = random
   texto = this.frases[Math.floor(Math.random() * 10)];
+
+  @Input()exibir : boolean = true;
+
+  exibirM(){
+    this.exibir = !this.exibir;
+  }
 }
 // Matheus Jacob Duarte e Vitor da Luz
